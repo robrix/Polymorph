@@ -1,0 +1,77 @@
+#Defining a new type
+
+##1. Make a new type struct to hold the methods:
+
+	typedef struct FooType {
+		RX_METHODS_FROM(RXObjectType);
+		
+		// methods for Foo instances go here
+		RXBool (*isBar)(struct Foo *);
+	} *FooTypeRef;
+
+The `RX_METHODS_FROM` macro copies in the methods from the supertype. You can make this macro work with your own types, too; just make a `RX_METHODS_FROM_MyTypeName` macro that includes `RX_METHODS_FROM(SuperType)` and your own methods.
+
+##2. Implement the functions for your type’s methods:
+
+	void FooTypeDeallocate(RXObjectRef self) {
+		…
+	}
+	
+	RXBool FooTypeIsEqual(RXObjectRef self, RXObjectRef other) {
+		…
+	}
+	
+	RXBool FooTypeIsBar(struct Foo *self) {
+		…
+	}
+
+Note that you can save yourself some time when implementing your methods by specifying the parameters as pointers to the instance type you’re implementing instead of RXObjectRef, e.g. `struct Foo *` or `FooRef` if you’ve done `typedef struct Foo * FooRef` somewhere appropriate.
+
+##3. Make a global variable of the type and populate it with the functions:
+
+	struct FooType FooType = {
+		.deallocate = FooTypeDeallocate, // this is only necessary if you’re not going to be using the garbage collector
+		.isEqual = FooTypeIsEqual,
+		.isBar = FooTypeIsBar,
+	};
+
+If you’ve specified your method parameters as pointers to the type you’re implementing (instead of the generic `RXObjectRef`) then you’ll get a warning on the assignments of the polymorphic methods above, unless you cast to the appropriate types. RXObjectType.h typedefs `RXDeallocateMethod` and `RXIsEqualMethod` for exactly this purpose, and you can do the same for your own methods’ types.
+
+##4. Make a new instance struct to hold the data:
+
+	typedef struct Foo {
+		RX_FIELDS_FROM(RXObject, FooType);
+		
+		RXBool isBar;
+	} Foo;
+
+The `RX_FIELDS_FROM` macro works much like the `RX_METHODS_FROM` macro described in step 1, copying in the inherited type’s data fields, but it also declares (in this example) that the instance’s type field points to a FooType struct. This latter bit of magic expects a typedef, `FooTypeRef`, which we defined in step 1.
+
+##5. Make a new function to create new instances:
+
+	Foo *CreateFoo() {
+		Foo result = RX_CREATE(Foo);
+		return result;
+	}
+
+##6. Use it:
+
+	Foo *a = CreateFoo(), *b = CreateFoo();
+	a->isBar = NO;
+	if(RXEquals(a, b)) {
+		…
+	}
+	RXRelease(a);
+	RXRelease(b);
+
+#Writing polymorphic functions
+
+You might have noticed that the `isBar` method defined in step 3 is polymorphic (i.e. the function is called through the type, and therefore can vary from instance to instance), but we haven’t written any way to call it arbitrary instances. You could write `instance->type->isBar(instance)`, but that’s quite a mouthful for something that’s going to be used regularly.
+
+Fortunately, it’s easy to wrap this in a polymorphic function:
+
+	RXBool FooIsBar(Foo *self) {
+		return self->type->isBar(self);
+	}
+
+Now you can call `FooIsBar()` with your instances (and instances of subtypes) and bask in the blissful glow of polymorphism.

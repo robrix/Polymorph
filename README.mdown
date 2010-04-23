@@ -1,0 +1,20 @@
+#Polymorph
+
+**A library for creating polymorphic types in C.**
+
+Polymorphic instances keep a reference to a type structure which itself has pointers to the functions implementing that type’s methods. This extra indirection (from the instance to the type) was chosen to keep instance sizes down, as Polymorph is intended to support model types.
+
+The implementation takes advantage of the preprocessor to make implementing new polymorphic types more convenient.
+
+Memory is managed by libauto’s garbage collector, if you’re using it, falling back to reference counting.
+
+The unit tests may be instructive if you’d like to see how it looks in practice, as they demonstrate how to declare a new type, and then create and use instances of it. You’ll probably also want to read everything in Documentation.
+
+Currently the universal polymorphism is pretty minimal:
+
+1. Reference counting (ignored under garbage collection).
+2. Deallocation (ignored under garbage collection).
+3. Getting an object’s type.
+4. Equality tests.
+
+Further polymorphic methods such as hashes and descriptions (as in CoreFoundation) are certainly possible, and will be added when needed. Feel free to fork if you need them more urgently than I do!

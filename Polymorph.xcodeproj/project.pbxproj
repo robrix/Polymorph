@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4AB03F411802B9B0048BBA1 /* RXObject.c in Sources */ = {isa = PBXBuildFile; fileRef = D4AB03B711802B9B0048BBA1 /* RXObject.c */; };
+		D4AB03F511802B9B0048BBA1 /* RXObject.h in Headers */ = {isa = PBXBuildFile; fileRef = D4AB03B811802B9B0048BBA1 /* RXObject.h */; };
+		D4AB03F611802B9B0048BBA1 /* RXObjectType.c in Sources */ = {isa = PBXBuildFile; fileRef = D4AB03B911802B9B0048BBA1 /* RXObjectType.c */; };
+		D4AB03F711802B9B0048BBA1 /* RXObjectType.h in Headers */ = {isa = PBXBuildFile; fileRef = D4AB03BA11802B9B0048BBA1 /* RXObjectType.h */; };
+		D4AB043A1180337C0048BBA1 /* RXAssertions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AB03E611802B9B0048BBA1 /* RXAssertions.m */; };
+		D4AB043B118033820048BBA1 /* RXObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AB040A11802BD00048BBA1 /* RXObjectTests.m */; };
+		D4AB043F118034010048BBA1 /* libPolymorph.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC046055464E500DB518D /* libPolymorph.a */; };
+		D4AB04A311803D270048BBA1 /* RXAllocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AB04A111803D270048BBA1 /* RXAllocation.m */; };
+		D4AB04A411803D270048BBA1 /* RXAllocation.h in Headers */ = {isa = PBXBuildFile; fileRef = D4AB04A211803D270048BBA1 /* RXAllocation.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4AB043D118033F50048BBA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D /* Polymorph */;
+			remoteInfo = Polymorph;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D2AAC046055464E500DB518D /* libPolymorph.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPolymorph.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4AB03B711802B9B0048BBA1 /* RXObject.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RXObject.c; sourceTree = "<group>"; };
+		D4AB03B811802B9B0048BBA1 /* RXObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXObject.h; sourceTree = "<group>"; };
+		D4AB03B911802B9B0048BBA1 /* RXObjectType.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RXObjectType.c; sourceTree = "<group>"; };
+		D4AB03BA11802B9B0048BBA1 /* RXObjectType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXObjectType.h; sourceTree = "<group>"; };
+		D4AB03E511802B9B0048BBA1 /* RXAssertions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAssertions.h; sourceTree = "<group>"; };
+		D4AB03E611802B9B0048BBA1 /* RXAssertions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAssertions.m; sourceTree = "<group>"; };
+		D4AB03F211802B9B0048BBA1 /* Polymorph.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polymorph.pch; sourceTree = "<group>"; };
+		D4AB040A11802BD00048BBA1 /* RXObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXObjectTests.m; sourceTree = "<group>"; };
+		D4AB04351180335A0048BBA1 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4AB04361180335A0048BBA1 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		D4AB04A111803D270048BBA1 /* RXAllocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAllocation.m; sourceTree = "<group>"; };
+		D4AB04A211803D270048BBA1 /* RXAllocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAllocation.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D289987405E68DCB004EDB86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4AB04321180335A0048BBA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4AB043F118034010048BBA1 /* libPolymorph.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* Polymorph */ = {
+			isa = PBXGroup;
+			children = (
+				D4AB03B611802B9B0048BBA1 /* Classes */,
+				D4AB03BB11802B9B0048BBA1 /* External */,
+				D4AB03F111802B9B0048BBA1 /* Other Sources */,
+				D4AB03F311802B9B0048BBA1 /* Tests */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = Polymorph;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC046055464E500DB518D /* libPolymorph.a */,
+				D4AB04351180335A0048BBA1 /* Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4AB03B611802B9B0048BBA1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D4AB04A211803D270048BBA1 /* RXAllocation.h */,
+				D4AB04A111803D270048BBA1 /* RXAllocation.m */,
+				D4AB03B711802B9B0048BBA1 /* RXObject.c */,
+				D4AB03B811802B9B0048BBA1 /* RXObject.h */,
+				D4AB03B911802B9B0048BBA1 /* RXObjectType.c */,
+				D4AB03BA11802B9B0048BBA1 /* RXObjectType.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D4AB03BB11802B9B0048BBA1 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D4AB03BC11802B9B0048BBA1 /* RXAssertions */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		D4AB03BC11802B9B0048BBA1 /* RXAssertions */ = {
+			isa = PBXGroup;
+			children = (
+				D4AB03E511802B9B0048BBA1 /* RXAssertions.h */,
+				D4AB03E611802B9B0048BBA1 /* RXAssertions.m */,
+			);
+			path = RXAssertions;
+			sourceTree = "<group>";
+		};
+		D4AB03F111802B9B0048BBA1 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D4AB03F211802B9B0048BBA1 /* Polymorph.pch */,
+			);
+			path = "Other Sources";
+			sourceTree = "<group>";
+		};
+		D4AB03F311802B9B0048BBA1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D4AB040A11802BD00048BBA1 /* RXObjectTests.m */,
+				D4AB04361180335A0048BBA1 /* Tests-Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC043055464E500DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4AB03F511802B9B0048BBA1 /* RXObject.h in Headers */,
+				D4AB03F711802B9B0048BBA1 /* RXObjectType.h in Headers */,
+				D4AB04A411803D270048BBA1 /* RXAllocation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC045055464E500DB518D /* Polymorph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB91EB08733DB70010E9CD /* Build configuration list for PBXNativeTarget "Polymorph" */;
+			buildPhases = (
+				D2AAC043055464E500DB518D /* Headers */,
+				D2AAC044055464E500DB518D /* Sources */,
+				D289987405E68DCB004EDB86 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Polymorph;
+			productName = Polymorph;
+			productReference = D2AAC046055464E500DB518D /* libPolymorph.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D4AB04341180335A0048BBA1 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4AB04391180335B0048BBA1 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				D4AB04301180335A0048BBA1 /* Resources */,
+				D4AB04311180335A0048BBA1 /* Sources */,
+				D4AB04321180335A0048BBA1 /* Frameworks */,
+				D4AB04331180335A0048BBA1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4AB043E118033F50048BBA1 /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = D4AB04351180335A0048BBA1 /* Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "Polymorph" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* Polymorph */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC045055464E500DB518D /* Polymorph */,
+				D4AB04341180335A0048BBA1 /* Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4AB04301180335A0048BBA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D4AB04331180335A0048BBA1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC044055464E500DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4AB03F411802B9B0048BBA1 /* RXObject.c in Sources */,
+				D4AB03F611802B9B0048BBA1 /* RXObjectType.c in Sources */,
+				D4AB04A311803D270048BBA1 /* RXAllocation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4AB04311180335A0048BBA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4AB043A1180337C0048BBA1 /* RXAssertions.m in Sources */,
+				D4AB043B118033820048BBA1 /* RXObjectTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4AB043E118033F50048BBA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC045055464E500DB518D /* Polymorph */;
+			targetProxy = D4AB043D118033F50048BBA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB91EC08733DB70010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PRODUCT_NAME = Polymorph;
+			};
+			name = Debug;
+		};
+		1DEB91ED08733DB70010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PRODUCT_NAME = Polymorph;
+			};
+			name = Release;
+		};
+		1DEB91F008733DB70010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Other Sources/Polymorph.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		1DEB91F108733DB70010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Other Sources/Polymorph.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+		D4AB04371180335B0048BBA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = POLYMORPH_UNIT_TESTS;
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Tests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D4AB04381180335B0048BBA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PREPROCESSOR_DEFINITIONS = POLYMORPH_UNIT_TESTS;
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Tests;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB91EB08733DB70010E9CD /* Build configuration list for PBXNativeTarget "Polymorph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91EC08733DB70010E9CD /* Debug */,
+				1DEB91ED08733DB70010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "Polymorph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91F008733DB70010E9CD /* Debug */,
+				1DEB91F108733DB70010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4AB04391180335B0048BBA1 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4AB04371180335B0048BBA1 /* Debug */,
+				D4AB04381180335B0048BBA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

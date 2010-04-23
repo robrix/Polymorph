@@ -1,0 +1,7 @@
+// Polymorph.pch
+// Created by Rob Rix on 2010-04-19
+// Copyright 2010 Monochrome Industries
+
+#ifdef POLYMORPH_UNIT_TESTS
+	#include "RXAssertions.h"
+#endif
