@@ -24,17 +24,21 @@ void RXDeallocate(RXObjectRef _self) {
 
 
 RXObjectRef RXRetain(RXObjectRef self) {
-	if(!RXCollectionEnabled()) {
-		((struct RXObject*)self)->referenceCount++;
+	if(self) {
+		if(!RXCollectionEnabled()) {
+			((struct RXObject*)self)->referenceCount++;
+		}
 	}
 	return self;
 }
 
 void RXRelease(RXObjectRef self) {
-	if(!RXCollectionEnabled()) {
-		((struct RXObject*)self)->referenceCount--;
-		if(RXGetReferenceCount(self) == 0) {
-			RXDeallocate(self);
+	if(self) {
+		if(!RXCollectionEnabled()) {
+			((struct RXObject*)self)->referenceCount--;
+			if(RXGetReferenceCount(self) == 0) {
+				RXDeallocate(self);
+			}
 		}
 	}
 }

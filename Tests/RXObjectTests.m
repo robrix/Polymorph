@@ -131,6 +131,16 @@ RXTestObjectRef RXTestObjectCreateWithDelegate(id delegate) {
 	RXAssert(RXEquals(object, same));
 }
 
+-(void)testReleasingNullIsANoOp {
+	RXObjectRef nullObject = NULL;
+	RXRelease(nullObject);
+	RXAssertEquals(nullObject, NULL);
+}
+
+-(void)testRetainingNullIsANoOp {
+	RXAssertEquals(RXRetain(NULL), NULL);
+}
+
 
 -(void)deallocateWasCalled {
 	deallocateWasCalled = YES;
