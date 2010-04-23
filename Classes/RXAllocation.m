@@ -10,6 +10,6 @@ __strong void *RXAllocate(RXIndex size) { // fixme: actually allocate something
 	return RXCollectionEnabled() ? NSAllocateCollectable(size, NSScannedOption) : calloc(1, size);
 }
 
-RXBool RXCollectionEnabled(void) {
+bool RXCollectionEnabled(void) {
 	return objc_collectingEnabled();
 }

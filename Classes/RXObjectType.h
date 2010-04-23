@@ -5,19 +5,10 @@
 #ifndef RXObjectType_H
 #define RXObjectType_H
 
-#import <stdint.h>
+#include <stdint.h>
+#include <stdbool.h>
 
 typedef void * RXObjectRef;
-
-typedef uint8_t RXBool;
-
-#ifndef NO
-#define NO (RXBool)0
-#endif
-
-#ifndef YES
-#define YES (RXBool)1
-#endif
 
 #ifdef __LP64__
 typedef uint64_t RXIndex;
@@ -26,7 +17,7 @@ typedef uint32_t RXIndex;
 #endif
 
 typedef void (*RXDeallocateMethod)(RXObjectRef);
-typedef RXBool (*RXIsEqualMethod)(RXObjectRef, RXObjectRef);
+typedef bool (*RXIsEqualMethod)(RXObjectRef, RXObjectRef);
 
 #define RX_METHODS_FROM(typename) RX_METHODS_FROM_##typename()
 #define RX_METHODS_FROM_RXObjectType() \

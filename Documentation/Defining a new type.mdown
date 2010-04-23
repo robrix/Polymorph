@@ -6,7 +6,7 @@
 		RX_METHODS_FROM(RXObjectType);
 		
 		// methods for Foo instances go here
-		RXBool (*isBar)(struct Foo *);
+		bool (*isBar)(struct Foo *);
 	} *FooTypeRef;
 
 The `RX_METHODS_FROM` macro copies in the methods from the supertype. You can make this macro work with your own types, too; just make a `RX_METHODS_FROM_MyTypeName` macro that includes `RX_METHODS_FROM(SuperType)` and your own methods.
@@ -17,11 +17,11 @@ The `RX_METHODS_FROM` macro copies in the methods from the supertype. You can ma
 		…
 	}
 	
-	RXBool FooTypeIsEqual(RXObjectRef self, RXObjectRef other) {
+	bool FooTypeIsEqual(RXObjectRef self, RXObjectRef other) {
 		…
 	}
 	
-	RXBool FooTypeIsBar(struct Foo *self) {
+	bool FooTypeIsBar(struct Foo *self) {
 		…
 	}
 
@@ -42,7 +42,7 @@ If you’ve specified your method parameters as pointers to the type you’re im
 	typedef struct Foo {
 		RX_FIELDS_FROM(RXObject, FooType);
 		
-		RXBool isBar;
+		bool isBar;
 	} Foo;
 
 The `RX_FIELDS_FROM` macro works much like the `RX_METHODS_FROM` macro described in step 1, copying in the inherited type’s data fields, but it also declares (in this example) that the instance’s type field points to a FooType struct. This latter bit of magic expects a typedef, `FooTypeRef`, which we defined in step 1.
@@ -57,7 +57,7 @@ The `RX_FIELDS_FROM` macro works much like the `RX_METHODS_FROM` macro described
 ##6. Use it:
 
 	Foo *a = CreateFoo(), *b = CreateFoo();
-	a->isBar = NO;
+	a->isBar = false;
 	if(RXEquals(a, b)) {
 		…
 	}
@@ -70,7 +70,7 @@ You might have noticed that the `isBar` method defined in step 3 is polymorphic 
 
 Fortunately, it’s easy to wrap this in a polymorphic function:
 
-	RXBool FooIsBar(Foo *self) {
+	bool FooIsBar(Foo *self) {
 		return self->type->isBar(self);
 	}
 

@@ -53,6 +53,6 @@ __strong RXObjectTypeRef RXGetType(RXObjectRef self) {
 }
 
 
-RXBool RXEquals(RXObjectRef self, RXObjectRef other) {
+bool RXEquals(RXObjectRef self, RXObjectRef other) {
 	return ((struct RXObject *)self)->type->isEqual(self, other);
 }

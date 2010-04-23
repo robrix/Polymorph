@@ -29,6 +29,6 @@ RXIndex RXGetReferenceCount(RXObjectRef self);
 
 __strong RXObjectTypeRef RXGetType(RXObjectRef self);
 
-RXBool RXEquals(RXObjectRef self, RXObjectRef other);
+bool RXEquals(RXObjectRef self, RXObjectRef other);
 
 #endif // RXObject_H

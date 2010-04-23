@@ -37,7 +37,7 @@ void RXTestObjectDeallocate(RXTestObjectRef self) {
 	[self->delegate deallocateWasCalled];
 }
 
-RXBool RXTestObjectIsEqual(RXTestObjectRef self, RXObjectRef other) {
+bool RXTestObjectIsEqual(RXTestObjectRef self, RXObjectRef other) {
 	return
 		(RXGetType(self) == RXGetType(other)) // pointer equality is fine for types
 	&&	self->delegate == ((RXTestObjectRef)other)->delegate;
@@ -74,7 +74,7 @@ RXTestObjectRef RXTestObjectCreateWithDelegate(id delegate) {
 @implementation RXObjectTests
 
 -(void)setUp {
-	deallocateWasCalled = NO;
+	deallocateWasCalled = false;
 	object = RXTestObjectCreateWithDelegate(self);
 }
 
@@ -143,7 +143,7 @@ RXTestObjectRef RXTestObjectCreateWithDelegate(id delegate) {
 
 
 -(void)deallocateWasCalled {
-	deallocateWasCalled = YES;
+	deallocateWasCalled = true;
 }
 
 @end

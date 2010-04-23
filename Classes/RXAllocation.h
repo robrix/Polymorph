@@ -9,6 +9,6 @@
 
 __strong void *RXAllocate(RXIndex size);
 
-RXBool RXCollectionEnabled(void);
+bool RXCollectionEnabled(void);
 
 #endif // RXAllocation_H
