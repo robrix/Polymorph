@@ -13,11 +13,11 @@ RXObjectRef RXCreate(RXIndex size, void *type) {
 }
 
 void RXDeallocate(RXObjectRef _self) {
-	struct RXObject *self = _self;
-	if(self->type->deallocate != NULL) {
-		self->type->deallocate(self);
-	}
 	if(!RXCollectionEnabled()) {
+		struct RXObject *self = _self;
+		if(self->type->deallocate != NULL) {
+			self->type->deallocate(self);
+		}
 		free(self);
 	}
 }
@@ -26,7 +26,7 @@ void RXDeallocate(RXObjectRef _self) {
 RXObjectRef RXRetain(RXObjectRef self) {
 	if(self) {
 		if(!RXCollectionEnabled()) {
-			((struct RXObject*)self)->referenceCount++;
+			((struct RXObject*)self)->referenceCount += 1;
 		}
 	}
 	return self;
@@ -35,9 +35,10 @@ RXObjectRef RXRetain(RXObjectRef self) {
 void RXRelease(RXObjectRef self) {
 	if(self) {
 		if(!RXCollectionEnabled()) {
-			((struct RXObject*)self)->referenceCount--;
-			if(RXGetReferenceCount(self) == 0) {
+			if(((struct RXObject*)self)->referenceCount == 1) {
 				RXDeallocate(self);
+			} else {
+				((struct RXObject*)self)->referenceCount -= 1;
 			}
 		}
 	}
