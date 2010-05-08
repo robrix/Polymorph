@@ -58,7 +58,7 @@ static struct RXTestObjectType RXTestObjectType = {
 
 // a function which creates instances
 RXTestObjectRef RXTestObjectCreateWithDelegate(id delegate) {
-	RXTestObjectRef result = RX_CREATE(RXTestObject);
+	RXTestObjectRef result = RXCreate(sizeof(struct RXTestObject), &RXTestObjectType);
 	result->self = result;
 	result->delegate = delegate;
 	return result;
@@ -68,18 +68,21 @@ RXTestObjectRef RXTestObjectCreateWithDelegate(id delegate) {
 @interface RXObjectTests : SenTestCase <RXTestObjectDelegate> {
 	RXObjectRef object;
 	BOOL deallocateWasCalled;
+	NSAutoreleasePool *pool;
 }
 @end
 
 @implementation RXObjectTests
 
 -(void)setUp {
+	pool = [[NSAutoreleasePool alloc] init];
 	deallocateWasCalled = false;
-	object = RXTestObjectCreateWithDelegate(self);
+	object = (RXObjectRef)[(id)RXTestObjectCreateWithDelegate(self) retain];
 }
 
 -(void)tearDown {
-	RXRelease(object);
+	[(id)object release];
+	[pool release];
 }
 
 
@@ -87,40 +90,47 @@ RXTestObjectRef RXTestObjectCreateWithDelegate(id delegate) {
 
 -(void)testRetainIncrementsReferenceCount {
 	if(!RXCollectionEnabled()) {
-		RXAssertEquals(RXGetReferenceCount(object), 1);
-		RXAssertEquals(RXGetReferenceCount(RXRetain(object)), 2);
-		RXAssertEquals(RXGetReferenceCount(RXRetain(object)), 3);
-		RXAssertEquals(RXGetReferenceCount(RXRetain(object)), 4);
+		[pool drain]; pool = nil;
+		RXAssertEquals(CFGetRetainCount(object), 1);
+		RXAssertEquals(CFGetRetainCount(CFRetain(object)), 2);
+		RXAssertEquals(CFGetRetainCount(CFRetain(object)), 3);
+		RXAssertEquals(CFGetRetainCount(CFRetain(object)), 4);
 	}
 }
 
 -(void)testReleaseDecrementsReferenceCount {
 	if(!RXCollectionEnabled()) {
-		RXAssertEquals(RXGetReferenceCount(object), 1);
-		RXAssertEquals(RXGetReferenceCount(RXRetain(object)), 2);
-		RXRelease(object);
-		RXAssertEquals(RXGetReferenceCount(object), 1);
+		[pool drain]; pool = nil;
+		RXAssertEquals(CFGetRetainCount(object), 1);
+		RXAssertEquals(CFGetRetainCount(CFRetain(object)), 2);
+		CFRelease(object);
+		RXAssertEquals(CFGetRetainCount(object), 1);
 	}
 }
 
 -(void)testLastReleaseTriggersDeallocateUnderRetainRelease {
 	if(RXCollectionEnabled()) {
 		RXAssertFalse(deallocateWasCalled);
-		RXRelease(object); // no op
+		CFRelease(object); // no op
 		RXAssertFalse(deallocateWasCalled);
 	}
 }
 
 -(void)testLastReleaseDoesNotTriggerDeallocateUnderGarbageCollection {
 	if(!RXCollectionEnabled()) {
+		[pool drain]; pool = nil;
+		
 		RXAssertFalse(deallocateWasCalled);
-		RXRelease(object);
+		CFRelease(object);
 		RXAssert(deallocateWasCalled);
 	}
 }
 
 -(void)testNewObjectsHaveBeenRetained {
-	RXAssertEquals(RXGetReferenceCount(object), RXCollectionEnabled() ? 0 : 1);
+	if(!RXCollectionEnabled()) {
+		[pool drain]; pool = nil;
+		RXAssertEquals(CFGetRetainCount(object), 1);
+	}
 }
 
 -(void)testEqualityTestsArePolymorphic {
@@ -129,16 +139,6 @@ RXTestObjectRef RXTestObjectCreateWithDelegate(id delegate) {
 	
 	RXTestObjectRef same = RXTestObjectCreateWithDelegate(self);
 	RXAssert(RXEquals(object, same));
-}
-
--(void)testReleasingNullIsANoOp {
-	RXObjectRef nullObject = NULL;
-	RXRelease(nullObject);
-	RXAssertEquals(nullObject, NULL);
-}
-
--(void)testRetainingNullIsANoOp {
-	RXAssertEquals(RXRetain(NULL), NULL);
 }
 
 

@@ -4,3 +4,6 @@
 
 #include "RXObjectType.h"
 
+__strong const char *RXObjectTypeGetName(RXObjectTypeRef self) {
+	return self->name;
+}

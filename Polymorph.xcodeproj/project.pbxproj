@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D4AB03F411802B9B0048BBA1 /* RXObject.c in Sources */ = {isa = PBXBuildFile; fileRef = D4AB03B711802B9B0048BBA1 /* RXObject.c */; };
+		D4AB03F411802B9B0048BBA1 /* RXObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AB03B711802B9B0048BBA1 /* RXObject.m */; };
 		D4AB03F511802B9B0048BBA1 /* RXObject.h in Headers */ = {isa = PBXBuildFile; fileRef = D4AB03B811802B9B0048BBA1 /* RXObject.h */; };
 		D4AB03F611802B9B0048BBA1 /* RXObjectType.c in Sources */ = {isa = PBXBuildFile; fileRef = D4AB03B911802B9B0048BBA1 /* RXObjectType.c */; };
 		D4AB03F711802B9B0048BBA1 /* RXObjectType.h in Headers */ = {isa = PBXBuildFile; fileRef = D4AB03BA11802B9B0048BBA1 /* RXObjectType.h */; };
@@ -16,6 +16,9 @@
 		D4AB043F118034010048BBA1 /* libPolymorph.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC046055464E500DB518D /* libPolymorph.a */; };
 		D4AB04A311803D270048BBA1 /* RXAllocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AB04A111803D270048BBA1 /* RXAllocation.m */; };
 		D4AB04A411803D270048BBA1 /* RXAllocation.h in Headers */ = {isa = PBXBuildFile; fileRef = D4AB04A211803D270048BBA1 /* RXAllocation.h */; };
+		D4D44290119384ED00392ED4 /* RXCoreFoundationIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D4428F119384ED00392ED4 /* RXCoreFoundationIntegration.m */; };
+		D4D444AC1194C79800392ED4 /* RXShadowObject.h in Headers */ = {isa = PBXBuildFile; fileRef = D4D444AA1194C79800392ED4 /* RXShadowObject.h */; };
+		D4D444AD1194C79800392ED4 /* RXShadowObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D444AB1194C79800392ED4 /* RXShadowObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		D2AAC046055464E500DB518D /* libPolymorph.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPolymorph.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4AB03B711802B9B0048BBA1 /* RXObject.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RXObject.c; sourceTree = "<group>"; };
+		D4AB03B711802B9B0048BBA1 /* RXObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXObject.m; sourceTree = "<group>"; };
 		D4AB03B811802B9B0048BBA1 /* RXObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXObject.h; sourceTree = "<group>"; };
 		D4AB03B911802B9B0048BBA1 /* RXObjectType.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RXObjectType.c; sourceTree = "<group>"; };
 		D4AB03BA11802B9B0048BBA1 /* RXObjectType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXObjectType.h; sourceTree = "<group>"; };
@@ -42,6 +45,10 @@
 		D4AB04361180335A0048BBA1 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		D4AB04A111803D270048BBA1 /* RXAllocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXAllocation.m; sourceTree = "<group>"; };
 		D4AB04A211803D270048BBA1 /* RXAllocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXAllocation.h; sourceTree = "<group>"; };
+		D4D4428E119384EB00392ED4 /* RXCoreFoundationIntegration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RXCoreFoundationIntegration.h; sourceTree = "<group>"; };
+		D4D4428F119384ED00392ED4 /* RXCoreFoundationIntegration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RXCoreFoundationIntegration.m; sourceTree = "<group>"; };
+		D4D444AA1194C79800392ED4 /* RXShadowObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXShadowObject.h; sourceTree = "<group>"; };
+		D4D444AB1194C79800392ED4 /* RXShadowObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXShadowObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +96,14 @@
 			children = (
 				D4AB04A211803D270048BBA1 /* RXAllocation.h */,
 				D4AB04A111803D270048BBA1 /* RXAllocation.m */,
-				D4AB03B711802B9B0048BBA1 /* RXObject.c */,
+				D4D4428E119384EB00392ED4 /* RXCoreFoundationIntegration.h */,
+				D4D4428F119384ED00392ED4 /* RXCoreFoundationIntegration.m */,
 				D4AB03B811802B9B0048BBA1 /* RXObject.h */,
+				D4AB03B711802B9B0048BBA1 /* RXObject.m */,
 				D4AB03B911802B9B0048BBA1 /* RXObjectType.c */,
 				D4AB03BA11802B9B0048BBA1 /* RXObjectType.h */,
+				D4D444AA1194C79800392ED4 /* RXShadowObject.h */,
+				D4D444AB1194C79800392ED4 /* RXShadowObject.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -141,6 +152,7 @@
 				D4AB03F511802B9B0048BBA1 /* RXObject.h in Headers */,
 				D4AB03F711802B9B0048BBA1 /* RXObjectType.h in Headers */,
 				D4AB04A411803D270048BBA1 /* RXAllocation.h in Headers */,
+				D4D444AC1194C79800392ED4 /* RXShadowObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,9 +244,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4AB03F411802B9B0048BBA1 /* RXObject.c in Sources */,
+				D4AB03F411802B9B0048BBA1 /* RXObject.m in Sources */,
 				D4AB03F611802B9B0048BBA1 /* RXObjectType.c in Sources */,
 				D4AB04A311803D270048BBA1 /* RXAllocation.m in Sources */,
+				D4D44290119384ED00392ED4 /* RXCoreFoundationIntegration.m in Sources */,
+				D4D444AD1194C79800392ED4 /* RXShadowObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
