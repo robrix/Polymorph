@@ -4,6 +4,8 @@
 
 #import "RXShadowObject.h"
 
+extern void RXDeallocate(RXObjectRef _self);
+
 @implementation RXShadowObject
 
 -(void)dealloc {
