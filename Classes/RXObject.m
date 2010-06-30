@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <CoreFoundation/CoreFoundation.h>
 
-RXObjectRef RXCreate(RXIndex size, void *type) {
+__strong RXObjectRef RXCreate(RXIndex size, void *type) {
 	RXObjectRef object = RXAllocate(size);
 	((struct RXObject*)object)->isa = [RXShadowObject class];
 	((struct RXObject*)object)->type = type;
