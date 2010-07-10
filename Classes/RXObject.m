@@ -37,6 +37,14 @@ __strong CFStringRef RXCopyDescription(RXObjectRef self) {
 }
 
 
+__strong RXObjectRef RXRetain(RXObjectRef self) {
+	return (RXObjectRef)[(id)self retain];
+}
+
+void RXRelease(RXObjectRef self) {
+	[(id)self release];
+}
+
 __strong RXObjectRef RXAutorelease(RXObjectRef self) {
 	return (RXObjectRef)[(id)self autorelease];
 }

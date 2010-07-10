@@ -24,6 +24,8 @@ __strong RXObjectTypeRef RXGetType(RXObjectRef self);
 
 __strong CFStringRef RXCopyDescription(RXObjectRef self);
 
+__strong RXObjectRef RXRetain(RXObjectRef self);
+void RXRelease(RXObjectRef self);
 __strong RXObjectRef RXAutorelease(RXObjectRef self);
 
 bool RXEquals(RXObjectRef self, RXObjectRef other);
