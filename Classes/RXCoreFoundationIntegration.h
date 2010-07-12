@@ -8,8 +8,6 @@
 #include <CoreFoundation/CoreFoundation.h>
 #include "RXObject.h"
 
-#define RX_REQUIRES_NULL_TERMINATION __attribute__ ((sentinel))
-
 CFArrayRef RXArray(RXObjectRef object, ...) RX_REQUIRES_NULL_TERMINATION;
 CFDictionaryRef RXDictionary(RXObjectRef object, ...) RX_REQUIRES_NULL_TERMINATION;
 

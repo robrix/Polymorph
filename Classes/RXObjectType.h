@@ -17,6 +17,9 @@ typedef uint64_t RXIndex;
 typedef uint32_t RXIndex;
 #endif
 
+#define RXIndexMax ULONG_MAX
+#define RX_REQUIRES_NULL_TERMINATION __attribute__((sentinel))
+
 typedef void (*RXDeallocateMethod)(RXObjectRef);
 typedef bool (*RXIsEqualMethod)(RXObjectRef, RXObjectRef);
 typedef CFStringRef (*RXCopyDescriptionMethod)(RXObjectRef);
